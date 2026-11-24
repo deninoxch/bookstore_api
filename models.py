@@ -7,10 +7,9 @@ from database import Base
 class Author(Base):
     __tablename__ = "authors"
 
-    id = Column(Integer, primary_key=True)          # PK — уникальный идентификатор
-    name = Column(String(150), nullable=False)      # NOT NULL — обязательное
-    country = Column(String(100), nullable=True)    # необязательное поле
-
+    id = Column(Integer, primary_key=True)          
+    name = Column(String(150), nullable=False)      
+    country = Column(String(100), nullable=True)    
     books = relationship("Book", back_populates="author")
 
 

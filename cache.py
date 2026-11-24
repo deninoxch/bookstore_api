@@ -1,10 +1,8 @@
 import redis
 
-# Кэшируем ТОЛЬКО полный список книг (GET /books без параметров)
 CACHE_KEY = "books:all"
-CACHE_TTL = 60  # секунды, по условию задания
+CACHE_TTL = 60  
 
-# decode_responses=True: redis-py вернёт str, а не bytes
 r = redis.Redis(host="localhost", port=6379, decode_responses=True)
 
 
